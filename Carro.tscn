@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://dor0fnmq01ans"]
+
+[ext_resource type="Script" path="res://carro(player).gd" id="1_8itmh"]
+[ext_resource type="Texture2D" uid="uid://dobso6kuh3np6" path="res://Porsche 911 Carrera 1998.png" id="1_u65n7"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6pik3"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(686, 311)
+
+[node name="Carro(Player)" type="CharacterBody2D" parent="."]
+safe_margin = 0.5
+script = ExtResource("1_8itmh")
+
+[node name="Sprite2D" type="Sprite2D" parent="Carro(Player)"]
+position = Vector2(2, 0)
+texture = ExtResource("1_u65n7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Carro(Player)"]
+rotation = 1.5708
+scale = Vector2(10, 17)
+shape = SubResource("CapsuleShape2D_6pik3")
