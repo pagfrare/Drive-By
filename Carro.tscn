@@ -4,19 +4,25 @@
 [ext_resource type="Texture2D" uid="uid://dobso6kuh3np6" path="res://Porsche 911 Carrera 1998.png" id="1_u65n7"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6pik3"]
+radius = 11.0
+height = 58.0
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(686, 311)
+rotation = 4.71239
 
 [node name="Carro(Player)" type="CharacterBody2D" parent="."]
+rotation = 4.71239
 safe_margin = 0.5
 script = ExtResource("1_8itmh")
 
 [node name="Sprite2D" type="Sprite2D" parent="Carro(Player)"]
 position = Vector2(2, 0)
+rotation = 4.71239
+scale = Vector2(0.24, 0.24)
 texture = ExtResource("1_u65n7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Carro(Player)"]
-rotation = 1.5708
-scale = Vector2(10, 17)
+position = Vector2(2, -4.76995e-08)
+scale = Vector2(2, 2)
 shape = SubResource("CapsuleShape2D_6pik3")
