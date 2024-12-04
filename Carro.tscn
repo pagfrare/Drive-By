@@ -26,3 +26,7 @@ texture = ExtResource("1_u65n7")
 position = Vector2(2, -4.76995e-08)
 scale = Vector2(2, 2)
 shape = SubResource("CapsuleShape2D_6pik3")
+
+[node name="Camera2D" type="Camera2D" parent="Carro(Player)"]
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0

@@ -1,17 +1,18 @@
 extends CharacterBody2D
 
-var potenciamotor = 1100 #pra controlar a aceleracao
+var potenciamotor = 1200 #pra controlar a aceleracao
 # aqui é onde o filho chora e a mãe não vẽ.....
-var volantemax = 30 #controla o quanto o carro vai virar
-var atrito = -200 #controla o atrito que desacelera o carro
+var volantemax = 20 #controla o quanto o carro vai virar
+var atrito = -50 #controla o atrito que desacelera o carro
 var resistAr = -1 #Resistência do ar
-var freio = -110 #freio do carro
-var tracaoBase = 1 # tração base das rodas
-var velocidademaxre = 100
-var distRodas = 80 #distância entre as rodas do carro pra tentar fazer ele bonitin igual o real
+var freio = -200 #freio do carro
+var tracaoBase = 8 # tração base das rodas
+var velocidademaxre = -100
+var distRodas = 65 #distância entre as rodas do carro pra tentar fazer ele bonitin igual o real
 var direcaoVolante  #pra onde o carro tá virando
 var aceleracao = Vector2.ZERO
 var Fatrito
+var teste
 
 func _physics_process(delta: float) -> void:
 		aceleracao = Vector2.ZERO
@@ -19,6 +20,7 @@ func _physics_process(delta: float) -> void:
 		calculaVirada(delta)
 		aplicaAtrito(delta)
 		velocity += aceleracao * delta
+		teste = velocity
 		move_and_slide()
 
 
@@ -53,8 +55,8 @@ func calculaVirada(delta):
 
 	# Choose the traction model based on the current speed
 	var tracao = tracaoBase
-	if velocity.length() > 1200:
-		tracao = tracaoBase * 0.6
+	if velocity.length() > 1100:
+		tracao = tracaoBase * 0.25
 
 	# Dot product represents how aligned the new heading is with the current velocity direction
 	var d = novaDirecao.dot(velocity.normalized())
