@@ -7,7 +7,7 @@ var atrito = -50 #controla o atrito que desacelera o carro
 var resistAr = -1 #Resistência do ar
 var freio = -200 #freio do carro
 var tracaoBase = 8 # tração base das rodas
-var velocidademaxre = -100
+var velocidademaxre = 350
 var distRodas = 65 #distância entre as rodas do carro pra tentar fazer ele bonitin igual o real
 var direcaoVolante  #pra onde o carro tá virando
 var aceleracao = Vector2.ZERO
@@ -57,6 +57,10 @@ func calculaVirada(delta):
 	var tracao = tracaoBase
 	if velocity.length() > 1100:
 		tracao = tracaoBase * 0.25
+		atrito = 0
+	else:
+		tracao = tracaoBase
+		atrito = -50
 
 	# Dot product represents how aligned the new heading is with the current velocity direction
 	var d = novaDirecao.dot(velocity.normalized())

@@ -31,6 +31,10 @@ text = "Opções"
 layout_mode = 2
 text = "Sair"
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(34, 53)
+zoom = Vector2(2, 2)
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Jogar" to="." method="_on_jogar_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Opções" to="." method="_on_opções_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Sair" to="." method="_on_sair_pressed"]

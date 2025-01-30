@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Drive By"
-run/main_scene="res://Carro.tscn"
+run/main_scene="res://menu_principal.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
@@ -45,6 +45,13 @@ Frear={
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194322,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="Barreira"
+2d_navigation/layer_1="Pista"
+2d_navigation/layer_2="Barreira"
+2d_navigation/layer_3="Grama"
 
 [rendering]
 

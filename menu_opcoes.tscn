@@ -27,4 +27,8 @@ text = "Volume"
 layout_mode = 2
 text = "Voltar"
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(35, 34)
+zoom = Vector2(2, 2)
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Voltar" to="." method="_on_voltar_pressed"]
