@@ -13,6 +13,7 @@ var direcaoVolante  #pra onde o carro tá virando
 var aceleracao = Vector2.ZERO
 var Fatrito
 var teste
+var tanqueCombustivel = 100.0
 
 func _physics_process(delta: float) -> void:
 		aceleracao = Vector2.ZERO
@@ -22,6 +23,7 @@ func _physics_process(delta: float) -> void:
 		velocity += aceleracao * delta
 		teste = velocity
 		move_and_slide()
+		gastaCombustivel(delta)
 
 
 func get_input():
@@ -31,7 +33,8 @@ func get_input():
 
 	# If accelerate is pressed, apply engine power to the car's forward direction
 	if Input.is_action_pressed("Acelerar"):
-		aceleracao = potenciamotor * transform.x #pelo oq entendi esse tranform.x serve pra calcular o vetor movimentação modificado
+		if tanqueCombustivel > 0:
+			aceleracao = potenciamotor * transform.x #pelo oq entendi esse tranform.x serve pra calcular o vetor movimentação modificado
 
 	# If brake is pressed, apply braking force
 	if Input.is_action_pressed("Frear"):
@@ -74,3 +77,16 @@ func calculaVirada(delta):
 		velocity = - novaDirecao * min(velocity.length(), velocidademaxre)
 	# muda o carro pra apontar pra onde tá indo
 	rotation = novaDirecao.angle()
+	
+#Combustível aqui ó
+func gastaCombustivel(delta):
+	if velocity.length() > 400:
+		tanqueCombustivel -= delta * 10
+	if tanqueCombustivel <= 0:
+		tanqueCombustivel = 0
+	atualizaCombustivel()
+
+func atualizaCombustivel():
+	$"../Interface de Usuario/Barra do Combustivel".value = tanqueCombustivel
+	var stylebox = $"../Interface de Usuario/Barra do Combustivel".get("theme_override_styles/background")
+	stylebox.bg_color.h = lerp(0, 200, tanqueCombustivel / 100)
