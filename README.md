@@ -5,3 +5,10 @@ O jogo é um Endless runner em que ao chegar no checkpoint, sua gasolina é reno
 
 
 Projeto para o grupo de estudo Maritacas GameDev
+
+
+Sprites do carro feito pelo:@MinZiin_
+https://minzinn.itch.io/
+
+Background feito por: @OxMatter
+https://mxtgames.itch.io/forest-vegetation-lite
