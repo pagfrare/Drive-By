@@ -1,0 +1,44 @@
+[gd_scene load_steps=2 format=3 uid="uid://m7ya2nmqueqe"]
+
+[ext_resource type="Script" path="res://GameOver.gd" id="1_lpice"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lpice")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 216.0
+offset_right = 574.0
+offset_bottom = 255.0
+scale = Vector2(2, 2)
+text = "Fim de Jogo!"
+editable = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(575, 324)
+
+[node name="Menu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 552.0
+offset_top = 392.0
+offset_right = 605.0
+offset_bottom = 429.0
+text = "Menu"
+
+[node name="Dnv" type="Button" parent="."]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 352.0
+offset_right = 650.0
+offset_bottom = 384.0
+text = "Jogar Novamente"
+
+[connection signal="pressed" from="Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="Dnv" to="." method="_on_dnv_pressed"]

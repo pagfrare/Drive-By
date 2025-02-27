@@ -26,11 +26,11 @@ offset_top = 350.0
 offset_right = 600.0
 offset_bottom = 385.0
 text = "Loading..."
+editable = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
-visible = false
 position = Vector2(548, 395)
-zoom = Vector2(3, 3)
+zoom = Vector2(2, 2)
 
 [node name="ProgressBar2" type="ProgressBar" parent="."]
 visible = false
@@ -50,3 +50,4 @@ offset_top = 420.0
 offset_right = 725.0
 offset_bottom = 460.0
 text = "Pressione \"barra de espaço\" para continuar"
+editable = false

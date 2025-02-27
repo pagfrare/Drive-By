@@ -19,6 +19,7 @@ func _process(delta: float) -> void:
 	if ($ProgressBar.value == 100):
 		$ProgressBar.visible = false
 		$ProgressBar2.visible = true
+		$loading.visible = false
 	if (loadbarra == ResourceLoader.THREAD_LOAD_LOADED):
 		cena = ResourceLoader.load_threaded_get(carro)
 		sucesso = 1
