@@ -1,0 +1,52 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3ya0vhud32qk"]
+
+[ext_resource type="Script" path="res://Loading.gd" id="1_w431e"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_w431e")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 385.0
+offset_right = 650.0
+offset_bottom = 415.0
+rounded = true
+
+[node name="loading" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 500.0
+offset_top = 350.0
+offset_right = 600.0
+offset_bottom = 385.0
+text = "Loading..."
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+position = Vector2(548, 395)
+zoom = Vector2(3, 3)
+
+[node name="ProgressBar2" type="ProgressBar" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 450.0
+offset_top = 385.0
+offset_right = 650.0
+offset_bottom = 415.0
+value = 100.0
+rounded = true
+
+[node name="Msg" type="TextEdit" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 375.0
+offset_top = 420.0
+offset_right = 725.0
+offset_bottom = 460.0
+text = "Pressione \"barra de espaço\" para continuar"
